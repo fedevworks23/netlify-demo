@@ -16,12 +16,12 @@ router.post('/add', (req, res) => {
 });
 
 //delete existing record
-router.delete('/', (req, res) => {
+router.delete('/del', (req, res) => {
   res.send('Deleted existing record');
 });
 
 //updating existing record
-router.put('/', (req, res) => {
+router.put('/update', (req, res) => {
   res.send('Updating existing record');
 });
 
@@ -46,5 +46,5 @@ router.get('/demo', (req, res) => {
   ]);
 });
 
-app.use('/.netlify/functions/api', router);
+app.use('/api/', router);
 module.exports.handler = serverless(app);
